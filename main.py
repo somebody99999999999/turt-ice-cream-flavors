@@ -62,3 +62,19 @@ def flavor_Menu():
     color("#ffffff")
     end_fill()
     begining()
+
+def write_Flavor():
+    color("#CE0303")
+    y=135
+    goto(-340.25,y)
+    for word in flavors:
+        write(word, align="center", font=("Comic Sans MS", 14, "bold"))
+        y -= 60
+        goto(-340.25, y)
+    begining()
+
+def write_title():
+    color("#ffffff")
+    goto(0, 300)
+    write("Gibby's Ice Cream Special!", align="center", font=("Comic Sans MS",32, "bold"))
+    begining()

@@ -124,3 +124,15 @@ def pick_Flavor():
         ice_scoop(choice, y)
         y += 70
     begining()
+
+def ice_cream_order():
+    set_Up()
+    draw_Lines()
+    write_title()
+    flavor_Menu()
+    write_Flavor()
+    ice_cone()
+    pick_Flavor()
+    done()
+
+ice_cream_order()

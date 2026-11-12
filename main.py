@@ -78,3 +78,16 @@ def write_title():
     goto(0, 300)
     write("Gibby's Ice Cream Special!", align="center", font=("Comic Sans MS",32, "bold"))
     begining()
+
+def ice_cone():
+    penup()
+    goto(60, -176)
+    color("#E0C5A1")
+    pendown()
+
+    begin_fill()
+    for i in range(3):
+        right(120)
+        forward(120)
+    end_fill()
+    begining()

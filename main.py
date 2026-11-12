@@ -47,3 +47,18 @@ def draw_Lines():
         x-=137.428571429
         goto(x, 425)
     begining()
+
+def flavor_Menu():
+    penup()
+    color("#000000")
+    goto(-220.5, 176.5)
+    pendown()
+    begin_fill()
+    for i in range(2):
+        right(90)
+        forward(425)
+        right(90)
+        forward(240.5)
+    color("#ffffff")
+    end_fill()
+    begining()

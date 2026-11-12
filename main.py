@@ -91,3 +91,36 @@ def ice_cone():
         forward(120)
     end_fill()
     begining()
+
+def ice_scoop(choice, y):
+    penup()
+    goto(0, y)
+    pendown()
+    color(flavors[choice])
+    begin_fill()
+    circle(60)
+    end_fill()
+    x_pos = [-45, 0, 45]
+    for x in x_pos:
+        penup()
+        goto(x, y - 10)
+        pendown()
+        begin_fill()
+        circle(20)
+        end_fill()
+
+def pick_Flavor():
+    choices = deque(maxlen=4)
+    while len(choices) < 4:
+        choose = textinput("Choose a flavor",f"Enter Flavor number {len(choices) + 1} or cancel to finish")
+        if not choose:
+            break
+        if choose in flavors:
+            choices.append(choose.strip().lower())
+        else:
+            continue
+    y = -200
+    for choice in choices:
+        ice_scoop(choice, y)
+        y += 70
+    begining()

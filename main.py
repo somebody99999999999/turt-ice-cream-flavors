@@ -145,7 +145,7 @@ def write_Flavor():
 def write_title():
     color("#ffffff")
     goto(0, 300)
-    write("Kandhyce Ice Cream Special!", align="center", font=("Comic Sans MS",32, "bold"))
+    write("Eduardo's Ice Cream Shop", align="center", font=("Comic Sans MS",32, "bold"))
     begining()
 
 def ice_cone():

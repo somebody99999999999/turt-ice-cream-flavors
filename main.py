@@ -202,7 +202,7 @@ def pick_Flavor():
             f"Enter a menu number (1-7) or flavor name for choice {len(choices) + 1}. Leave blank to finish.",
         )
 
-        # if they just leave it blank it ends it and just does the basic cone or just does the select ones they pick
+        # if they just leave it blank it ends it and just does the basic cone or just does the select one - ones they pick
         if not choose:
             break
         choose = choose.strip()

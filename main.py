@@ -199,10 +199,10 @@ def pick_Flavor():
     while len(choices) < 4:
         choose = textinput(
             "Choose a flavor",
-            f"Enter a menu number (1-7) or flavor name for choice {len(choices) + 1}. Leave blank to finish.",
+            f"Enter a menu number (1-7) or a flavor name for choice {len(choices) + 1}. \n\nAnd Leave blank or click cancel to finish.",
         )
 
-        # if they just leave it blank it ends it and just does the basic cone or just does the select one - ones they pick
+        # If they just leave it blank it ends it and just does the basic cone or just does the select one - ones they pick
         if not choose:
             break
         choose = choose.strip()

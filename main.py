@@ -9,6 +9,7 @@ os.system('cls' if os.name == 'nt' else 'clear')
 
 flavorsList = {}
 
+# The start of the flavors class
 class Flavors:
     def __init__(self, flavor_name, category, calories, fat_g, cholesterol_mg, carbs_g, sugars_g, protein_g, size_cup1, color_hex):
         self.flavor_name = flavor_name

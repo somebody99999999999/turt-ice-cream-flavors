@@ -4,6 +4,9 @@ import textwrap
 from turtle import *
 import os
 
+# Just removes the dumb text that just appears at the top of the terminal
+os.system('cls' if os.name == 'nt' else 'clear')
+
 flavorsList = {}
 
 class Flavors:
@@ -260,3 +263,5 @@ def ice_cream_order():
 
 if __name__ == "__main__":
     ice_cream_order()
+
+# mightbeivan was here.

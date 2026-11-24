@@ -229,14 +229,19 @@ def pick_Flavor():
 
     write(f"Total calories: {total_calories} kal", align="center", font=("Cambria", 16, "bold"))
     goto(x, 210)
+
     write(f"Total cholesterol: {total_chol} mg", align="center", font=("Cambria", 16, "bold"))
     goto(x, 180)
+
     write(f"Total fat: {total_fat} g", align="center", font=("Cambria", 16, "bold"))
     goto(x, 150)
+
     write(f"Total carbs: {total_carbs} g", align="center", font=("Cambria", 16, "bold"))
     goto(x, 120)
+
     write(f"Total sugars: {total_sugar} g", align="center", font=("Cambria", 16, "bold"))
     goto(x, 90)
+
     write(f"Total proteins: {total_prot} g", align="center", font=("Cambria", 16, "bold"))
     begining()
 

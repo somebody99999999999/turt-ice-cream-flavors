@@ -137,15 +137,15 @@ def write_Flavor():
         for line in lines:
             penup()
             goto(-340.25, y)
-            write(line, align="center", font=("Comic Sans MS", 10, "bold"))
+            write(line, align="center", font=("Cambria", 12, "bold"))
             y -= 15
-        y -= max(0, 27 - (len(lines) - 1) * 15)
+        y -= max(0, 27 - (len(lines) - 2) * 15)
     begining()
 
 def write_title():
     color("#ffffff")
     goto(0, 300)
-    write("Eduardo's Ice Cream Shop", align="center", font=("Comic Sans MS",32, "bold"))
+    write("Eduardo's Ice Cream Shop", align="center", font=("Cambria",32, "bold"))
     begining()
 
 def ice_cone():
@@ -212,17 +212,17 @@ def pick_Flavor():
     penup()
     x = 300
     goto(x, 240)
-    write(f"Total calories: {total_calories} kal", align="center", font=("Comic Sans MS", 16, "bold"))
+    write(f"Total calories: {total_calories} kal", align="center", font=("Cambria", 16, "bold"))
     goto(x, 210)
-    write(f"Total cholesterol: {total_chol} mg", align="center", font=("Comic Sans MS", 16, "bold"))
+    write(f"Total cholesterol: {total_chol} mg", align="center", font=("Cambria", 16, "bold"))
     goto(x, 180)
-    write(f"Total fat: {total_fat} g", align="center", font=("Comic Sans MS", 16, "bold"))
+    write(f"Total fat: {total_fat} g", align="center", font=("Cambria", 16, "bold"))
     goto(x, 150)
-    write(f"Total carbs: {total_carbs} g", align="center", font=("Comic Sans MS", 16, "bold"))
+    write(f"Total carbs: {total_carbs} g", align="center", font=("Cambria", 16, "bold"))
     goto(x, 120)
-    write(f"Total sugars: {total_sugar} g", align="center", font=("Comic Sans MS", 16, "bold"))
+    write(f"Total sugars: {total_sugar} g", align="center", font=("Cambria", 16, "bold"))
     goto(x, 90)
-    write(f"Total proteins: {total_prot} g", align="center", font=("Comic Sans MS", 16, "bold"))
+    write(f"Total proteins: {total_prot} g", align="center", font=("Cambria", 16, "bold"))
     begining()
 
 def ice_cream_order():

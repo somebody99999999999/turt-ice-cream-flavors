@@ -155,7 +155,7 @@ def write_Flavor():
 def write_title():
     color("#ffffff")
     goto(0, 300)
-    write("Eduardo's Ice Cream Shop", align="center", font=("Cambria",32, "bold"))
+    write("Ed's Ice Cream Parlor", align="center", font=("Cambria",32, "bold"))
     begining()
 
 def ice_cone():
@@ -197,6 +197,8 @@ def pick_Flavor():
             "Choose a flavor",
             f"Enter a menu number (1-7) or flavor name for choice {len(choices) + 1}. Leave blank to finish.",
         )
+
+        # if they just leave it blank it ends it and just does the basic cone or just does the select ones they pick
         if not choose:
             break
         choose = choose.strip()

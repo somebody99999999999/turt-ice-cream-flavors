@@ -55,9 +55,12 @@ class Flavors:
         return f"{self.flavor_name} - {self.category}:  {self.calories},{self.fat_g},{self.cholesterol_mg},{self.carbs_g},{self.sugars_g},{self.protein_g}. {self.size_cup}, {self.color_hex}"
 
 
+# Where it reads from the BJN csv file
 with open(os.path.join(os.path.dirname(__file__), "BenJerryNutrition.csv"), mode="r") as ice_db:
+
     flavors_DB = csv.reader(ice_db)
     next(flavors_DB)
+
     for flavor in flavors_DB:
         name = str(flavor[0])
         cal = int(flavor[1])
@@ -72,6 +75,7 @@ with open(os.path.join(os.path.dirname(__file__), "BenJerryNutrition.csv"), mode
 
         flavorsList[name] = Flavors(name, category, cal, fat_g, chol_mg, carb_g, sug_g, prot_g, size_cup, color_hex)
 
+# Where it picks what you will see on the flavors list
 picked_flavors = random.sample(list(flavorsList.values()), k=7)
 
 
@@ -86,8 +90,8 @@ def begining():
     color("#000000")
     home()
 
-def set_Up():
-    # set up
+def Set_up():
+    # The set up
     clear_Terminal()
     screen = Screen()
     screen.setup(width=962, height=850)
@@ -103,6 +107,7 @@ def draw_Lines():
     penup()
     right(90)
     goto(x,425)
+    
     for i in range(7):
         pendown()
         forward(850)
@@ -117,6 +122,7 @@ def flavor_Menu():
     goto(-220.5, 176.5)
     pendown()
     begin_fill()
+    
     for i in range(2):
         right(90)
         forward(425)
@@ -127,6 +133,7 @@ def flavor_Menu():
     begining()
 
 def write_Flavor():
+    
     color("#CE0303")
     y=135
     for number, flavor in enumerate(picked_flavors, start=1):
@@ -134,13 +141,16 @@ def write_Flavor():
             f"{number}. {flavor.flavor_name} ({flavor.calories} cal)",
             width=28,
         )
+        
         for line in lines:
             penup()
             goto(-340.25, y)
+
             write(line, align="center", font=("Cambria", 12, "bold"))
             y -= 15
         y -= max(0, 27 - (len(lines) - 2) * 15)
     begining()
+
 
 def write_title():
     color("#ffffff")
@@ -162,6 +172,7 @@ def ice_cone():
     begining()
 
 def ice_scoop(flavor, y):
+    
     penup()
     goto(0, y)
     pendown()
@@ -179,6 +190,7 @@ def ice_scoop(flavor, y):
         end_fill()
 
 def pick_Flavor():
+
     choices = []
     while len(choices) < 4:
         choose = textinput(
@@ -198,6 +210,7 @@ def pick_Flavor():
         if flavor is not None:
             choices.append(flavor)
 
+
     y = -200
     for flavor in choices:
         ice_scoop(flavor, y)
@@ -208,10 +221,12 @@ def pick_Flavor():
     total_carbs = sum(flavor.carbs_g for flavor in choices)
     total_sugar = sum(flavor.sugars_g for flavor in choices)
     total_prot = sum(flavor.protein_g for flavor in choices)
+
     color("#000000")
     penup()
     x = 300
     goto(x, 240)
+
     write(f"Total calories: {total_calories} kal", align="center", font=("Cambria", 16, "bold"))
     goto(x, 210)
     write(f"Total cholesterol: {total_chol} mg", align="center", font=("Cambria", 16, "bold"))
@@ -225,8 +240,9 @@ def pick_Flavor():
     write(f"Total proteins: {total_prot} g", align="center", font=("Cambria", 16, "bold"))
     begining()
 
+
 def ice_cream_order():
-    set_Up()
+    Set_up()
     draw_Lines()
     write_title()
     flavor_Menu()
